@@ -21,25 +21,7 @@ public class User implements Serializable {
 	
 	@DBRef(lazy=true) 
 	private List<Post> posts = new ArrayList<>();
-	/* 
-	  @DBRef(lazy=true)
-	  Usamos por que, como a gente está referenciando uma 
-	  coleção, geralmente por padrão a gente não quer 
-	  carregar automaticamente os Posts quando eu recuperar
-	  um usuário do banco de dados.
-	  
-	  Vamos supor que você está recuperando os usuários para 
-	  fazer um relatório de usuários e essa consulta te 
-	  retorna mil usuários... imagina se para cada um desses 
-	  mil usuários já viessem também a lista de Post deles...
-	  Seriam muitos dados, muito tráfego na rede desnecessário.
-	  
-	  Essa anotação vai garantir pra gente que os posts só 
-	  vão ser carregados se eu explicitamente acessá-los.
-	  
-	  Se eu não acessar os Posts quando eu carregar um 
-	  usuário, virá somente os dados básicos do usuário.
-	*/
+
 	public User() {
 	}
 
