@@ -52,6 +52,8 @@ public class Instantiation implements CommandLineRunner {
 		// no author teremos uma cópia do objeto do User, é uma cópia e não uma referência.
 		
 		postRepository.saveAll(Arrays.asList(post1, post2));
+		maria.getPosts().addAll(Arrays.asList(post1, post2));
+		userRepository.save(maria);
 	}
 
 }
